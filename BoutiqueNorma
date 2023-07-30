@@ -1,0 +1,174 @@
+struct Articulo{ 
+  let nombre: String
+  let precio: Int
+  let stock: Int
+}
+
+var articulos = [
+  Articulo(nombre: "Blusa", precio: 200, stock: 20),
+  Articulo(nombre: "Falda", precio: 350, stock: 8),
+  Articulo(nombre: "Vestido", precio: 400, stock: 15),
+  Articulo(nombre: "Pantalon", precio: 600, stock: 25),
+  Articulo(nombre: "Short", precio: 250, stock: 10)
+]
+
+//Menu de articulos que se mostrara al usuario
+var aux: String = ""
+var opcionIngresada: String = aux
+var cuenta: Int = 0
+
+while opcionIngresada != "2" {
+  print("\n***************************************************")
+  print("*********BIENVENIDOS A BOUTIQUE NORMA*********\n")
+  print("*******Articulos en existencia*******\n")
+  print("--------------------------------------------------")
+  print("Opcion 1")
+  print("Articulo : \(articulos[0].nombre)")
+  print("Precio : $\(articulos[0].precio)")
+  print("Stock : \(articulos[0].stock)\n")
+  print("--------------------------------------------------")
+  print("Opcion 2")
+  print("Articulo : \(articulos[1].nombre)")
+  print("Precio : $\(articulos[1].precio)")
+  print("Stock : \(articulos[1].stock)\n")
+  print("--------------------------------------------------")
+  print("Opcion 3")
+  print("Articulo : \(articulos[2].nombre)")
+  print("Precio : $\(articulos[2].precio)")
+  print("Stock : \(articulos[2].stock)\n")
+  print("--------------------------------------------------")
+  print("Opcion 4")
+  print("Articulo : \(articulos[3].nombre)")
+  print("Precio : $\(articulos[3].precio)")
+  print("Stock : \(articulos[3].stock)\n")
+  print("--------------------------------------------------")
+  print("Articulo 5: \(articulos[4].nombre)")
+  print("Precio : $\(articulos[4].precio)")
+  print("Stock : \(articulos[4].stock)\n")
+  print("--------------------------------------------------")
+//Articulos
+  print("1.- Comprar Articulo")
+  print("2.- Salir")
+
+  aux = readLine()!
+  opcionIngresada = aux
+
+  switch opcionIngresada {
+    case "1":
+      print("Ingresa la opción de articulo a comprar: ")
+      aux = readLine()!
+      opcionIngresada = aux 
+
+    switch opcionIngresada{
+      case "1":
+        print("Ingresa la cantidad de Blusas a comprar: ")
+        aux = readLine()!
+        opcionIngresada = aux
+      
+        let cantidadIngresada = Int(opcionIngresada) ?? 0
+        if cantidadIngresada <= articulos[0].stock{
+          //Si se puede realizar la compra
+          cuenta = cantidadIngresada * articulos[0].precio
+          print("\n*******************************************************")
+          print("-------------------------------------------------------\n")
+          print("******SU TRANSACCIÓN HA SIDO REALIZADA CON EXITO******\n")
+          print("TOTAL A PAGAR: $\(cuenta)\n")
+          print("Gracias por su compra, vuelva pronto a Boutique Norma\n")
+          print("-------------------------------------------------------\n")
+       } else {
+          print("No hay suficiente stock, lo sentimos\n")
+          print("-------------------------------------------------------\n")
+       }
+      
+      case "2":
+        print("Ingresa la cantidad de Faldas a comprar: ")
+      aux = readLine()!
+        opcionIngresada = aux
+      
+        let cantidadIngresada = Int(opcionIngresada) ?? 0
+        if cantidadIngresada <= articulos[1].stock{
+          //Si se puede realizar la compra
+          cuenta = cantidadIngresada * articulos[1].precio
+          print("\n*******************************************************")
+          print("-------------------------------------------------------\n")
+          print("******SU TRANSACCIÓN HA SIDO REALIZADA CON EXITO******\n")
+          print("TOTAL A PAGAR: $\(cuenta)\n")
+          print("Gracias por su compra, vuelva pronto a Boutique Norma\n")
+          print("-------------------------------------------------------\n")
+       } else {
+          print("No hay suficiente stock, lo sentimos!Vn")
+          print("-------------------------------------------------------\n")
+       }
+      case "3":
+        print("Ingresa la cantidad de Vestidos a comprar: ")
+      aux = readLine()!
+        opcionIngresada = aux
+      
+        let cantidadIngresada = Int(opcionIngresada) ?? 0
+        if cantidadIngresada <= articulos[2].stock{
+          //Si se puede realizar la compra
+          cuenta = cantidadIngresada * articulos[2].precio
+          print("\n*******************************************************")
+          print("-------------------------------------------------------\n")
+          print("******SU TRANSACCIÓN HA SIDO REALIZADA CON EXITO******\n")
+          print("TOTAL A PAGAR: $\(cuenta)\n")
+          print("Gracias por su compra, vuelva pronto a Boutique Norma\n")
+          print("-------------------------------------------------------\n")
+       } else {
+          print("No hay suficiente stock, lo sentimos!Vn")
+          print("-------------------------------------------------------\n")
+       }
+      case "4":
+        print("Ingresa la cantidad de Pantalones a comprar: ")
+      aux = readLine()!
+        opcionIngresada = aux
+      
+        let cantidadIngresada = Int(opcionIngresada) ?? 0
+        if cantidadIngresada <= articulos[3].stock{
+          //Si se puede realizar la compra
+          cuenta = cantidadIngresada * articulos[3].precio
+          print("\n*******************************************************")
+          print("-------------------------------------------------------\n")
+          print("******SU TRANSACCIÓN HA SIDO REALIZADA CON EXITO******\n")
+          print("TOTAL A PAGAR: $\(cuenta)\n")
+          print("Gracias por su compra, vuelva pronto a Boutique Norma\n")
+          print("-------------------------------------------------------\n")
+       } else {
+          print("No hay suficiente stock, lo sentimos!Vn")
+          print("-------------------------------------------------------\n")
+       }
+      case "5":
+        print("Ingresa la cantidad de Shorts a comprar: ")
+      aux = readLine()!
+        opcionIngresada = aux
+      
+        let cantidadIngresada = Int(opcionIngresada) ?? 0
+        if cantidadIngresada <= articulos[4].stock{
+          //Si se puede realizar la compra
+          cuenta = cantidadIngresada * articulos[4].precio
+          print("\n*******************************************************")
+          print("-------------------------------------------------------\n")
+          print("******SU TRANSACCIÓN HA SIDO REALIZADA CON EXITO******\n")
+          print("TOTAL A PAGAR: $\(cuenta)\n")
+          print("Gracias por su compra, vuelva pronto a Boutique Norma\n")
+          print("-------------------------------------------------------\n")
+       } else {
+          print("No hay suficiente stock, lo sentimos!Vn")
+          print("-------------------------------------------------------\n")
+       }
+      default:
+        print("Opción Invalida")
+    }
+
+    case "2":
+      print("Ha seleccionado SALIR, Adios!!")
+      aux = readLine()!
+      opcionIngresada = aux 
+
+    
+     
+    default: 
+      print("La opción elegida no es correcta, favor de intentar de nuevo!!")
+      aux = readLine()!
+  }
+}
