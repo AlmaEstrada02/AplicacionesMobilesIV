@@ -1,0 +1,65 @@
+var aux: String = ""
+var opcionIngresada: String = aux
+var saldoTotal: Double = 0
+
+func depositar(){
+  print("Ingresa la cantidad a depositar: \n")
+  aux = readLine()!
+  opcionIngresada = aux
+
+  //Creación de la variable Double para realizar la suma
+  let cantidadDepositada = Double(opcionIngresada)!
+  print("Deposito exitoso por la cantidad de $\(cantidadDepositada)\n")
+}
+
+while opcionIngresada != "4"{
+  print("\n*******************************")
+  print("******Banco Mexicano******\n")
+  print("******Bienvenid@******\n")
+  print("Elija una opción: ")
+  print("1.- Deposito")
+  print("2.- Retiro")
+  print("3.- Consultar saldo")
+  print("4.- Salir")
+  print("\n")
+
+  aux = readLine()!
+  opcionIngresada = aux
+
+  switch opcionIngresada {
+    
+    case "1":
+    print("\nDeposito")
+    depositar()
+    print("¿Desea realizar otro deposito? S/N : ")
+    aux = readLine()!
+    opcionIngresada = aux
+    
+    switch opcionIngresada {
+      
+    case "S","s","SI","Si","si","sI","SI ","si ":
+    depositar()
+      
+    case "N","n","NO","No","no","nO","NO ","no ":
+    print("¿Deseas realizar otra operación? S/N")
+    aux = readLine()!
+    opcionIngresada = aux
+      if (opcionIngresada == "N") || ((opcionIngresada == "n")) || ((opcionIngresada == "NO")) || ((opcionIngresada == "No")) || ((opcionIngresada == "no")) {
+        print("Cerrando sesión de cuenta, vuelva pronto...!")
+        opcionIngresada = "4"
+      }
+      default:
+      print("Opción Invalida!")
+      opcionIngresada = "4"
+  }
+    case "2":
+    print("\nRetiro")
+    case "3":
+    print("\nConsultar saldo")
+    case "4":
+    print("Salir")
+    default:
+    print("Opción no valida")
+    
+}
+}
